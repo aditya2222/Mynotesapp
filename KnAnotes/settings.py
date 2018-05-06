@@ -77,9 +77,8 @@ WSGI_APPLICATION = 'KnAnotes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':    'newdb',
-        'USER': 'postgres',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':    'my-db',
     }
 }
 
@@ -127,6 +126,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'thanks'
 
-
-import django_heroku
-django_heroku.settings(locals())
