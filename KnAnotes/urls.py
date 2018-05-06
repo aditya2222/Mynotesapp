@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
+from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
 	path('',include('notes.urls')),
@@ -24,3 +26,7 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(),name='logout'),
 ]
 
+
+
+admin.site.site_header = _("Site Administration")
+admin.site.site_title = _("My Site Admin")
